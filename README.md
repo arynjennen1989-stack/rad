@@ -15,8 +15,9 @@ The following have landed on `main`:
 - **Express server** with `GET /health` endpoint
 - **9 tests** (health endpoint + server bootstrap) with coverage thresholds
 - **package.json** with scripts: `start`, `dev`, `test`, `lint`
+- **Complete devDependencies** (`@eslint/js` and `globals` added in PR #10)
 
-Merged PRs: [#7](https://github.com/arynjennen1989-stack/rad/pull/7) (LICENSE + ESLint), [#8](https://github.com/arynjennen1989-stack/rad/pull/8) (server, tests, coverage).
+Merged PRs: [#7](https://github.com/arynjennen1989-stack/rad/pull/7) (LICENSE + ESLint), [#8](https://github.com/arynjennen1989-stack/rad/pull/8) (server, tests, coverage), [#9](https://github.com/arynjennen1989-stack/rad/pull/9) (remove stale .eslintrc.json, README update), [#10](https://github.com/arynjennen1989-stack/rad/pull/10) (fix missing ESLint devDependencies).
 
 ## Open Issues
 
@@ -26,9 +27,9 @@ Merged PRs: [#7](https://github.com/arynjennen1989-stack/rad/pull/7) (LICENSE + 
 
 ```bash
 npm install
-npm test       # Run Jest tests with coverage
-npm run lint   # Run ESLint
-npm start      # Start the Express server on port 3000
+npm test        # Run Jest tests with coverage
+npm run lint    # Run ESLint
+npm start       # Start the Express server on port 3000
 ```
 
 ## Project Structure

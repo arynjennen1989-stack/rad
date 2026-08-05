@@ -13,15 +13,16 @@ The following have landed on `main`:
 - **MIT LICENSE** file
 - **ESLint 9 flat config** (`eslint.config.js` with `eslint:recommended` for CommonJS/Node.js/Jest)
 - **Express server** with `GET /health` endpoint
-- **9 tests** (health endpoint + server bootstrap) with coverage thresholds
+- **8 tests** (5 health endpoint + 3 server bootstrap) with coverage thresholds
 - **package.json** with scripts: `start`, `dev`, `test`, `lint`
 - **Complete devDependencies** (`@eslint/js` and `globals` added in PR #10)
+- **GitHub Actions CI workflow** (`.github/workflows/webpack.yml`) — added by Aryn, needs fixes (see issue #6)
 
 Merged PRs: [#7](https://github.com/arynjennen1989-stack/rad/pull/7) (LICENSE + ESLint), [#8](https://github.com/arynjennen1989-stack/rad/pull/8) (server, tests, coverage), [#9](https://github.com/arynjennen1989-stack/rad/pull/9) (remove stale .eslintrc.json, README update), [#10](https://github.com/arynjennen1989-stack/rad/pull/10) (fix missing ESLint devDependencies).
 
 ## Open Issues
 
-- [#6](https://github.com/arynjennen1989-stack/rad/issues/6) — Add GitHub Actions CI workflow file (blocked: API token lacks `workflow` scope)
+- [#6](https://github.com/arynjennen1989-stack/rad/issues/6) — Add GitHub Actions CI workflow file (workflow added but needs fixes: wrong build tool, missing lint/test steps, EOL Node 18.x)
 
 ## Development
 
@@ -36,14 +37,17 @@ npm start       # Start the Express server on port 3000
 
 ```
 rad/
+├── .github/
+│   └── workflows/
+│       └── webpack.yml      # CI workflow (needs fixes — see issue #6)
 ├── src/
-│   ├── server.js          # Express app entry point
+│   ├── server.js            # Express app entry point
 │   └── routes/
-│       └── health.js      # GET /health endpoint
+│       └── health.js        # GET /health endpoint
 ├── tests/
-│   ├── health.test.js     # Health endpoint tests (5)
-│   └── server.test.js     # Server bootstrap tests (4)
-├── eslint.config.js       # ESLint 9 flat config
+│   ├── health.test.js       # Health endpoint tests (5)
+│   └── server.test.js       # Server bootstrap tests (3)
+├── eslint.config.js         # ESLint 9 flat config
 ├── package.json
 ├── LICENSE
 └── README.md
